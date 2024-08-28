@@ -12,7 +12,7 @@ def implement_instructions(contents: list, hp: int, dp: int):
         amount = int(split[1])
 
 
-def change_position(direction: str, amount: int, hp: int, dp: int) -> (int, int):
+def change_position(direction: str, amount: int, hp: int, dp: int) -> tuple:
     pass
 
 
