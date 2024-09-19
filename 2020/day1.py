@@ -14,7 +14,22 @@ def find_pair(numbers: list, total: int) -> list:
         if remainder in numbers:
             return [number, remainder]
 
-    return []
+    return None
+
+
+def find_triplets(numbers: list, total: int) -> list:
+
+    numbers = list(map(int, numbers))
+
+    while len(numbers) != 0:
+        number = numbers.pop()
+        remainder = total - number
+        last_two = find_pair(numbers, remainder)
+        if last_two:
+            last_two.append(number)
+            return last_two
+
+    return None
 
 
 def find_answer(pair: list) -> int:
