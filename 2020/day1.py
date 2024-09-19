@@ -1,4 +1,6 @@
 
+from math import prod
+
 
 def read_data():
     with open('data.txt') as f:
@@ -37,14 +39,11 @@ def find_answer(pair: list) -> int:
     if not pair:
         return 0
 
-    if len(pair) > 2:
-        raise ValueError("NOT A PAIR")
-
-    return pair[0]*pair[1]
+    return prod(pair)
 
 
 if __name__ == "__main__":
 
     data = read_data()
 
-    print(find_answer(find_pair(data, 2020)))
+    print(find_answer(find_triplets(data, 2020)))
